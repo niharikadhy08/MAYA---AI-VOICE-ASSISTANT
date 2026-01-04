@@ -1,12 +1,8 @@
-# streamlit
-# openai
-# python-dotenv
-# SpeechRecognition
-# gTTS
-# pygame
-# feedparser
-# pyaudio
 streamlit
-feedparser
 openai
 python-dotenv
+SpeechRecognition
+gTTS
+pygame
+feedparser
+pyaudio

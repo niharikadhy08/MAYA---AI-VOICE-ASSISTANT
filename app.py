@@ -1,6 +1,5 @@
 import streamlit as st
 import feedparser
-from voice import VOICE_AVAILABLE
 
 from ai_engine import ai_process
 from voice import listen, speak, stop_speaking
@@ -32,7 +31,6 @@ for sender, message in st.session_state.chat:
     else:
         st.markdown(f"**🤖 Maya:** {message}")
 
-
 if st.session_state.open_url:
     st.markdown("### 🔗 Action")
     st.link_button("👉 Open link", st.session_state.open_url)
@@ -40,10 +38,6 @@ if st.session_state.open_url:
     st.session_state.open_url = None
 
 if st.button("🎤 Talk to Maya"):
-    if not VOICE_AVAILABLE:
-        st.warning("🎧 Voice is not supported on Streamlit Cloud. Please type instead.")
-        st.stop()
-
     try:
         with st.spinner("🎧 Listening..."):
             user_command = listen()
